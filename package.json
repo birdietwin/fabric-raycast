@@ -1,0 +1,81 @@
+{
+  "$schema": "https://www.raycast.com/schemas/extension.json",
+  "name": "fabric-patterns",
+  "title": "Fabric Patterns",
+  "description": "Run Fabric AI patterns to analyze, summarize, extract insights, and transform text. Auto-detects input from selection, clipboard, or browser.",
+  "icon": "extension-icon.png",
+  "author": "kimes",
+  "license": "MIT",
+  "categories": ["Productivity", "Developer Tools"],
+  "keywords": [
+    "fabric",
+    "ai",
+    "patterns",
+    "summarize",
+    "analyze",
+    "extract",
+    "llm",
+    "gpt",
+    "claude",
+    "openai",
+    "text processing"
+  ],
+  "commands": [
+    {
+      "name": "run-pattern",
+      "title": "Run Fabric Pattern",
+      "subtitle": "Fabric",
+      "description": "Select a pattern and process input from clipboard, selection, or browser",
+      "mode": "view",
+      "keywords": ["fabric", "pattern", "ai", "analyze", "summarize", "extract"]
+    }
+  ],
+  "preferences": [
+    {
+      "name": "fabricPath",
+      "title": "Fabric Binary Path",
+      "description": "Path to the fabric executable. Leave empty to auto-detect from PATH.",
+      "type": "textfield",
+      "placeholder": "/usr/local/bin/fabric or ~/go/bin/fabric",
+      "required": false
+    },
+    {
+      "name": "patternsDir",
+      "title": "Patterns Directory",
+      "description": "Directory containing Fabric patterns",
+      "type": "textfield",
+      "default": "~/.config/fabric/patterns",
+      "placeholder": "~/.config/fabric/patterns",
+      "required": true
+    },
+    {
+      "name": "defaultModel",
+      "title": "Default Model",
+      "description": "AI model to use (e.g., gpt-4, claude-3-opus). Leave empty to use Fabric's default.",
+      "type": "textfield",
+      "placeholder": "gpt-4-turbo",
+      "required": false
+    }
+  ],
+  "dependencies": {
+    "@raycast/api": "^1.87.0",
+    "@raycast/utils": "^1.18.0"
+  },
+  "devDependencies": {
+    "@raycast/eslint-config": "^1.0.11",
+    "@types/node": "22.10.2",
+    "@types/react": "18.3.17",
+    "eslint": "^8.57.1",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "build": "ray build",
+    "dev": "ray develop",
+    "fix-lint": "ray lint --fix",
+    "lint": "ray lint",
+    "validate": "npm run lint && npm run build && echo '✅ Validation passed'",
+    "prepublishOnly": "echo \"\\n\\nIt seems like you are trying to publish the Raycast extension to npm.\\n\\nIf you did intend to publish it to npm, remove the \\`prepublishOnly\\` script and rerun \\`npm publish\\` again.\\nIf you wanted to publish it to the Raycast Store instead, use \\`npm run publish\\` instead.\\n\\n\" && exit 1",
+    "publish": "npx @raycast/api@latest publish"
+  }
+}
