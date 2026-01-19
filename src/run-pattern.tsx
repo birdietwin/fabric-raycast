@@ -73,7 +73,7 @@ export default function Command() {
       setError(null);
 
       try {
-        // Detect input source
+        // Get browser URL as input
         const input = await detectInput();
         setInputInfo(input);
 
@@ -281,11 +281,13 @@ function PatternListItem({
             icon={Icon.Play}
             onAction={() => onExecute(pattern)}
           />
-          <Action.CopyToClipboard
-            title="Copy Pattern Name"
-            content={pattern.name}
-            shortcut={{ modifiers: ["cmd"], key: "." }}
-          />
+          <ActionPanel.Section>
+            <Action.CopyToClipboard
+              title="Copy Pattern Name"
+              content={pattern.name}
+              shortcut={{ modifiers: ["cmd"], key: "." }}
+            />
+          </ActionPanel.Section>
         </ActionPanel>
       }
     />
