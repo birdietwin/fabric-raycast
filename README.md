@@ -1,5 +1,7 @@
 # Fabric Patterns for Raycast
 
+**Updated: 08/04/2026**
+
 Run [Fabric](https://github.com/danielmiessler/fabric) AI patterns directly from Raycast with automatic input detection.
 
 ![Fabric Patterns](metadata/fabric-patterns-1.png)
